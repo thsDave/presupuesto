@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Presupuesto</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<!-- fontawesome -->
+		<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="#">Presupuesto</a>
+		</nav>
+		<div class="container">
+			<div class="row mt-4">
+				<div class="col-12">
+					<div class="jumbotron">
+						<h1>Presupuesto de <span id="fecha"></span></h1>
+						<p>Una simple práctica con localStorage 😁</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-info btn-lg" id="label_in">
+							<input type="radio" name="options" id="get_in" onclick="seleccionar('ingresos');"><i class="fas fa-arrow-circle-down"></i> Ingresos
+						</label>
+						<label class="btn btn-info btn-lg" id="label_out">
+							<input type="radio" name="options" id="get_out" onclick="seleccionar('egresos');"><i class="fas fa-arrow-circle-up"></i> Egresos
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-12">
+					<form id="register-form">
+						<div class="form-row">
+							<div class="col-12 col-md-3">
+								<div class="form-group">
+									<div class="input-group is-invalid">
+										<div class="input-group-prepend">
+											<span class="input-group-text">$</span>
+										</div>
+										<input type="number" class="form-control" id="amount" placeholder="Monto" required>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-5">
+								<div class="form-group">
+									<input type="text" class="form-control" id="desc" placeholder="Descripción" required>
+								</div>
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<button type="button" class="btn btn-primary" onclick="guardar();"><i class="fas fa-save"></i> Guardar</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row mb-3 mt-3">
+				<div class="col-12">
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-secondary btn-lg" id="label_register_in">
+							<input type="radio" name="options" id="register_in"><i class="fas fa-file-download"></i> Registro de ingresos
+						</label>
+						<label class="btn btn-secondary btn-lg" id="label_register_out">
+							<input type="radio" name="options" id="register_out"><i class="fas fa-file-upload"></i> Registro de egresos
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4" id="data_ingresos">
+				<div class="col-12">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Descripción</th>
+								<th>Monto</th>
+							</tr>
+						</thead>
+						<tbody id="data_ingresos_content"></tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row mt-4" id="data_egresos">
+				<div class="col-12">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Descripción</th>
+								<th>Monto</th>
+							</tr>
+						</thead>
+						<tbody id="data_egresos_content"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+		<script src="index.js"></script>
+	</body>
+</html>
